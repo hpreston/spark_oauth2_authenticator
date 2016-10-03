@@ -51,6 +51,7 @@ deploy:
       password: $$MANTL_PASSWORD
     urls:
       - https://$$MANTL_CONTROL/marathon/v2/apps/$$MANTL_APP_ID-dev/restart?force=true
+      - https://$$MANTL_CONTROL/marathon/v2/apps/$$MANTL_APP_ID-client-dev/restart?force=true
     when:
       branch: "dev"
 
@@ -63,6 +64,7 @@ deploy:
       password: $$MANTL_PASSWORD
     urls:
       - https://$$MANTL_CONTROL/marathon/v2/apps/$$MANTL_APP_ID/restart?force=true
+      - https://$$MANTL_CONTROL/marathon/v2/apps/$$MANTL_APP_ID-client/restart?force=true
     when:
       branch: "master"
 

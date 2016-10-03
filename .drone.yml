@@ -20,6 +20,24 @@ publish:
     when:
       branch: "master"
 
+  docker:
+    context: sample_client_app/
+    repo: $$DOCKER_ORG/$$DOCKER_REPO_client
+    tag: "$${BRANCH##feature/}"
+    username: $$DOCKER_USERNAME
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
+
+  docker:
+    context: sample_client_app/
+    repo: $$DOCKER_ORG/$$DOCKER_REPO_client
+    tag: "latest"
+    username: $$DOCKER_USERNAME
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
+    when:
+      branch: "master"
+
 
 deploy:
   webhook:

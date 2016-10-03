@@ -22,6 +22,7 @@ publish:
 
   docker:
     context: sample_client_app/
+    file: sample_client_app/Dockerfile
     repo: $$DOCKER_ORG/$$DOCKER_REPO_client
     tag: "$${BRANCH##feature/}"
     username: $$DOCKER_USERNAME
@@ -30,6 +31,7 @@ publish:
 
   docker:
     context: sample_client_app/
+    file: sample_client_app/Dockerfile
     repo: $$DOCKER_ORG/$$DOCKER_REPO_client
     tag: "latest"
     username: $$DOCKER_USERNAME
